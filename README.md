@@ -18,6 +18,8 @@ By using the header `stdarg.h` the function has access to the variable arguments
 	
 `va_arg`	- Macro that returns the next argument from the list. It must be used repeatedly to access all arguments. `va_arg(list, data_type)`;
 
+`va_end`	- Return a copy of the arguments in va_list;
+
 `va_end`	- Used to clean up the `va_list`. This ensures that resources associates with the `va_list` are properly released. `va_end(list)`;
 
 
@@ -32,17 +34,17 @@ Bitwise operators are used to perform directly on the binary. These operators wo
 
 Allow precise manipulation of bits, giving you control over hardware operations.
 
-`&`	- AND operator - Does AND operation on every two bit of two numbers. Return 1 only if both bits are 1.
+ - `&`	- AND operator - Does AND operation on every two bit of two numbers. Return 1 only if both bits are 1.
 	
-`|`	- OR operator - Does OR operation on every two bit of two numbers. Return 1 if any of the two bits is 1.
+ - `|`	- OR operator - Does OR operation on every two bit of two numbers. Return 1 if any of the two bits is 1.
 	
-`^`	- XOR operator - Does XOR operation on every two bit of two numbers. Return 1 if the two bits are different.
+ - `^`	- XOR operator - Does XOR operation on every two bit of two numbers. Return 1 if the two bits are different.
 	
-`~`	- NOT operator - Does a NOT operation. Return an invertion of all the bits received.
+ - `~`	- NOT operator - Does a NOT operation. Return an invertion of all the bits received.
 	
-`<<`	- LEFT SHIFT operator - Takes two numbers, the one on the right side of the operator is the number of digits to shift. The left one is the number that is shifted. This operation 'pushes the number to the left', adding a zero at the end of the number.
+ - `<<`	- LEFT SHIFT operator - Takes two numbers, the one on the right side of the operator is the number of digits to shift. The left one is the number that is shifted. This operation 'pushes the number to the left', adding a zero at the end of the number.
 	
-`>>`	- RIGHT SHIFT operaton - Takes two numbers, the one on the right side of the operator is the number of digits to shift. The left one is the numer that is shifted. This operation 'pushes the number to the right', 'cutting' wherever number is at the last digit, or wherever amount is shifted.
+ - `>>`	- RIGHT SHIFT operaton - Takes two numbers, the one on the right side of the operator is the number of digits to shift. The left one is the numer that is shifted. This operation 'pushes the number to the right', 'cutting' wherever number is at the last digit, or wherever amount is shifted.
 	
 
 Considerations:
