@@ -11,7 +11,7 @@ The use o Variadic Functions (these three dots -> ...) inside the ft_printf allo
 
 
 By using the header `stdarg.h` the function has access to the variable arguments:
-
+:
 `va_list`	- Valets - Variable that stores the variadic inputs;
 
 `va_start`	- Macro that initializes the `va_lis` to retrieve arguments from the variable arguments section.

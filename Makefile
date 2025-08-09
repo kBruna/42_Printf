@@ -6,11 +6,11 @@
 #    By: buehara <buehara@student.42sp.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/06 14:42:28 by buehara           #+#    #+#              #
-#    Updated: 2025/08/07 17:13:18 by buehara          ###   ########.fr        #
+#    Updated: 2025/08/08 21:16:37 by buehara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprint.a
+NAME = libftprintf.a
 
 AR = ar
 
@@ -21,9 +21,8 @@ CC = cc
 C_FLAGS = -Wall -Werror -Wextra
 
 C_SOURCE = ft_printf.c		\
-			ft_putstr_fd.c 	\
+			ft_strncmp.c	\
 			ft_strlen.c		\
-			ft_putchar_fd.c
 
 OBJ = $(C_SOURCE:.c=.o)
 
