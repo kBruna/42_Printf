@@ -16,19 +16,25 @@ The purpose of the `printf` function is to create and initialize the Variadic Fu
 
 This function main purpose is to define with flag is being used and parse the value to the right auxiliary function.
 
-	`static void ft_putstr(char *s, int *count)` - For the flag `s`
+	static void ft_putstr(char *s, int *count)
 	
-	`static void ft_putnbr(long n, int t_char, int *count)` - For the flags `d`, `i` and `u`
+For the flag `s`
 	
-	`static void ft_puthex(unsigned long nbr, char x, int *count)` - For the flags `x`, `X` and `p`
+	static void ft_putnbr(long n, int t_char, int *count)
+	
+For the flags `d`, `i` and `u`
+	
+	static void ft_puthex(unsigned long nbr, char x, int *count)
+	
+For the flags `x`, `X` and `p`
 	
 
-Since the flags `%` and `c` are simple enought to implement in less than 3 lines, they are implemented in this function, without the need for a new function.
+Since the flags `%` and `c` are simple enought to implement in less than 3 lines, they are implemented in this function, without the need for a new function. This may change later.
 
 
 ## ft_putstr Function
 
-Using the function `write` from the library `unistd.h`, this function prints any string received. If the value is NULL, it will print `(null)`.
+Using the function `write` from the library `unistd.h`, this function prints any string received. If the value is `NULL`, it will print `(null)`.
 
 
 ## ft_putnbr Function
@@ -48,7 +54,15 @@ If the flag received is `x` (lowercase x) it will print the hex in lowercase.
 
 If the flag received is `X` (uppercase X) it will print the hex in uppercase. 
 
-If the flag received is `p` it will first print `0x` and then change the flag to `x`, treating the number as this flag would, essencially printing it in lowercase hexadecimal.
+If the flag received is `p` it will first print `0x` and then change the flag to `x`, treating the number as this flag would, essencially printing it in lowercase hexadecimal. If the value is `NULL` it will print `(nil)` only.
+
+
+## ft_printf Return
+
+This function will return the number of characters effectively printed.
+
+
+Using the return of function `write`, that returns the amount of characters printed, the auxiliary functions add this return to a pointer of an int var `count` inside the ft_printf function. This is the value that will be effectively returned from this function.
 
 
 ## Notes:
@@ -76,6 +90,9 @@ Since `ft_printf` needs to receive different data types, and also, need to recei
 As the function's first parameter is a `const char *`, with the common flags used on the original function `printf`, all flags would be preceded by a `%` character, and that can be used to count the amount of arguments passed.
 
 ### Test
+
+This test changed a lot throughout the implementation, so this final version does not test every flag, as they were tested first and changed shortly after to other parameters. It tries to test against the original function in order to understand the original implementation and try to copy it's functioning. As it is right now, its focus is to deal with numbers and it's negative values assigned to unsigned int variables. It try to check the values of hexadecimal and it's variables. It also checks for `NULL` values and var addressess.
+
 
 	#include <stdio.h>
 
