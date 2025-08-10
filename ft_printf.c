@@ -6,7 +6,7 @@
 /*   By: buehara <buehara@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 15:09:42 by buehara           #+#    #+#             */
-/*   Updated: 2025/08/10 17:06:16 by buehara          ###   ########.fr       */
+/*   Updated: 2025/08/10 18:57:33 by buehara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ static int	*ft_printflags(const char s, int *count, va_list list)
 		ft_puthex(va_arg(list, unsigned int), s, count);
 	else if (s - 'p' == 0)
 		ft_puthex(va_arg(list, unsigned long), s, count);
-	else
-		(*count) += (int)write(1, &percent, 1);
 	return (count);
 }
 
@@ -123,26 +121,3 @@ int	ft_printf(const char *s, ...)
 	va_end(list);
 	return (count);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char 	*str = "This is a string";
-	int		org = -123; 
-	int		new = -123;
-	int		hex = 123456;
-	int		hex2 = -123456;
-	char	d	= 'z';
-	unsigned int minus = -5;
-	char	*str1 = "";
-
-	org = printf("\n\tOg function: %d %i %c %u %s %s %x %X %x %X %p %p %q \n", 
-org, org, d, minus, str, str1, hex, hex, hex2, hex2, &org, NULL);
-
-	new = ft_printf("\n\tMy function: %d %i %c %u %s %s %x %X %x %X %p %p %q \n", 
-new, new, d, minus, str, str1, hex, hex, hex2, hex2, &org, NULL);
-
-	printf("Return :\n\tOriginal %d | My Function %d\n", org, new);
-
-	return (0);
-}*/
