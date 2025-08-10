@@ -6,13 +6,13 @@
 /*   By: buehara <buehara@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 15:09:42 by buehara           #+#    #+#             */
-/*   Updated: 2025/08/10 16:34:54 by buehara          ###   ########.fr       */
+/*   Updated: 2025/08/10 17:06:16 by buehara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s, int *count)
+static void	ft_putstr(char *s, int *count)
 {
 	char	*null;
 
@@ -29,7 +29,7 @@ void	ft_putstr(char *s, int *count)
 	}
 }
 
-void	ft_putnbr(long n, int t_char, int *count)
+static void	ft_putnbr(long n, int t_char, int *count)
 {
 	long	nbr;
 	char	minus;
@@ -47,7 +47,7 @@ void	ft_putnbr(long n, int t_char, int *count)
 	(*count) += (int)write(1, &nbr, 1);
 }
 
-void	ft_puthex(unsigned long nbr, char x, int *count)
+static void	ft_puthex(unsigned long nbr, char x, int *count)
 {
 	char	*hex_nbr;
 	char	hex_end;
@@ -74,7 +74,7 @@ void	ft_puthex(unsigned long nbr, char x, int *count)
 	(*count) += (int)write(1, &hex_end, 1);
 }
 
-int	*ft_printflags(const char s, int *count, va_list list)
+static int	*ft_printflags(const char s, int *count, va_list list)
 {
 	char	percent;
 	char	pt_char;
